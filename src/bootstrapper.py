@@ -116,7 +116,7 @@ def get_challenge_input(day: int, year: int) -> str:
     )
 
     if response.status_code != 200:
-        print(f"Error {response.status_code} while fetching {request_url}. Maybe your day or year is invalid.", file=stderr)
+        print(f"Error {response.status_code} while fetching {request_url}. Maybe your day or year is invalid, or maybe your session cookie is incorrect or has expired.", file=stderr)
         exit(BoostrapperError.BAD_AOC_REQUEST.value)
 
     return response.text
